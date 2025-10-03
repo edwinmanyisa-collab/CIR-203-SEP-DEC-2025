@@ -1,0 +1,23 @@
+routes = [
+    "Nairobi-Mombasa",
+    "Kisumu-Nairobi",
+    "Nakuru-Eldoret",
+    "Nairobi-Thika",
+    "Garissa-Nairobi",
+    "Nairobi-Machakos",
+    "Meru-Nairobi",
+    "Nairobi-Kitui",
+    "Kakamega-Nairobi",
+    "Nairobi-Bungoma"
+]
+print("Initial routes:", routes)
+routes.append("Nairobi-Kisii")       
+routes.remove("Nairobi-Thika")       
+print("\nAfter adding/removing routes:", routes)
+routes.sort()
+routes.reverse()
+print("\nSorted & reversed routes:", routes)
+count_N = sum(1 for r in routes if r.startswith("N"))
+print("\nNumber of routes starting with 'N':", count_N)
+long_routes = [r for r in routes if len(r) > 10]
+print("\nRoutes longer than 10 characters:", long_routes)
