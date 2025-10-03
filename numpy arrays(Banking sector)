@@ -1,0 +1,23 @@
+import numpy as np
+np.random.seed(42)
+transaction_volumes = np.random.randint(1000, 5000, size=(4, 6))
+
+print("Transaction Volumes (4x6):")
+print(transaction_volumes)
+total_per_branch = np.sum(transaction_volumes, axis=1)
+
+print("\nBranch Totals:")
+for i, total in enumerate(total_per_branch):
+    print(f"Branch {i + 1}: {total}")
+highest_branch_index = np.argmax(total_per_branch)
+highest_branch_number = highest_branch_index + 1
+highest_transaction_count = total_per_branch[highest_branch_index]
+
+print(f"\nHighest Branch: Branch {highest_branch_number} ({highest_transaction_count})")
+average_monthly_volume = np.mean(transaction_volumes)
+
+print(f"\nOverall Average: {average_monthly_volume:.2f}")
+reshaped_volumes = transaction_volumes.reshape(3, 8)
+
+print("\nReshaped Array (3x8):")
+print(reshaped_volumes)
